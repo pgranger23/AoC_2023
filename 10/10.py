@@ -106,9 +106,8 @@ def prob2():
 
         
     cum0 = np.cumsum(np.isin(dir_mat, ['L', '7']), axis=0)//2 + np.cumsum(np.isin(dir_mat, ['J', 'F']), axis=0)//2 + np.cumsum(dir_mat == '-', axis=0)
-    cum1 = np.cumsum(np.isin(dir_mat, ['L', '7']), axis=1)//2 + np.cumsum(np.isin(dir_mat, ['J', 'F']), axis=1)//2 + np.cumsum(dir_mat == '|', axis=1)
 
-    result = (cum0%2 != 0) & (cum0 != 0) & (dir_mat == '.') & (cum1%2 != 0) & (cum1 != 0)
+    result = (cum0%2 != 0) & (cum0 != 0) & (dir_mat == '.')
 
     print(f"Number enclosed: {np.count_nonzero(result)}")
 
